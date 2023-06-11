@@ -20,8 +20,18 @@ import Layout from "../layouts/Layout.astro";
                 <br />
                 or here:
                 <br />
-                <a href="https://www.linkedin.com/in/jaden-hou" target="_blank" class="link">LinkedIn</a>
-                <a href="https://www.instagram.com/houjaden/" target="_blank" class="link">Instagram</a>
+                <a
+                    href="https://www.linkedin.com/in/jaden-hou"
+                    target="_blank"
+                    class="link"
+>LinkedIn</a
+                >
+                <a
+                    href="https://www.instagram.com/houjaden/"
+                    target="_blank"
+                    class="link"
+     >Instagram</a
+                >
             </p>
         </div>
     </main>
@@ -31,3 +41,12 @@ import Layout from "../layouts/Layout.astro";
         @apply text-blue-500 underline;
     }
 </style>
+<script is:inline>
+const links = document.querySelectorAll("a");
+
+// Add event listeners to fire confetti when a button is clicked.
+links.forEach((link) => {
+    link.addEventListener("click", () => umami.track(`clicked ${link.textContent}`));
+});
+
+</script>
