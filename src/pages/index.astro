@@ -7,38 +7,46 @@ import Layout from "../layouts/Layout.astro";
         <div class="w-11/12 max-w-lg mx-auto">
             <h1 class="text-4xl font-bold">Jaden Hou</h1>
             <p>
-                Hi, I'm Jaden and I'm a student in the Global Ecology magnet
-                program @ Poolesville High School.
+                Hi, I'm Jaden and I'm a student in the <span class="hover:text-green-500 transition-colors">Global Ecology</span> magnet
+                program @ <span class="hover:text-amber-300 transition-colors">Poolesville High School</span>.
                 <br /><br />
                 You find me at
                 <br />
                 <span class="font-mono rounded-md"
-                    >jadenhou19 <span class="text-purple-500">[at]</span> gmail <span
-                        class="text-purple-500">[dot]</span
+                    >jadenhou19 <span class="text-purple-500 brack">[at]</span> gmail <span
+                        class="text-purple-500 brack">[dot]</span
                     > com</span
                 >
                 <br />
                 or here:
                 <br />
-                <a
-                    href="https://www.linkedin.com/in/jaden-hou"
-                    target="_blank"
-                    class="link"
->LinkedIn</a
-                >
-                <a
-                    href="https://www.instagram.com/houjaden/"
-                    target="_blank"
-                    class="link"
-     >Instagram</a
-                >
+                <div class="flex gap-2">
+                    <a
+                        href="https://www.linkedin.com/in/jaden-hou"
+                        target="_blank"
+                        class="link">LinkedIn</a
+                    >
+                    <a
+                        href="https://www.instagram.com/houjaden/"
+                        target="_blank"
+                        class="link">Instagram</a
+                    >
+                        <a
+                        href="https://github.com/InternetRamen"
+                        target="_blank"
+                        class="link">GitHub</a
+                    >
+                </div>
             </p>
         </div>
     </main>
 </Layout>
 <style>
     .link {
-        @apply text-blue-500 underline;
+        @apply after:w-full after:bg-purple-5g00 after:h-[0.1em] after:block after:absolute after:bottom-0 after:-z-10 relative hover:after:h-6 hover:text-white after:transition-all transition after:duration-300;
+    }
+    .brack {
+        @apply after:w-full after:h-1 after:absolute relative after:bg-purple-500 after:top-0 after:left-0 after:-translate-y-2 hover:after:translate-y-5 after:block after:opacity-0 hover:after:opacity-100 after:transition-all duration-300;
     }
 </style>
 <script is:inline>
@@ -46,7 +54,8 @@ const links = document.querySelectorAll("a");
 
 // Add event listeners to fire confetti when a button is clicked.
 links.forEach((link) => {
-    link.addEventListener("click", () => umami.track(`clicked ${link.textContent}`));
+    link.addEventListener("click", () =>
+        umami.track(`clicked ${link.textContent}`)
+    );
 });
-
 </script>
