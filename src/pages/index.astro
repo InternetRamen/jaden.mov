@@ -44,9 +44,10 @@ import Layout from "../layouts/Layout.astro";
             </p>
             <script
                 src="https://widgets.tree-nation.com/js/widgets/v1/widgets.min.js?v=1.0"
+                is:inline
             ></script>
-            <div id="tree-nation-offset-website"></div>
-            <script is:inline>
+            <div id="tree-nation-offset-website" class="mt-2"></div>
+            <script>
                 TreeNationOffsetWebsite({
                     code: "650f6383d0173",
                     lang: "en",
@@ -65,10 +66,10 @@ import Layout from "../layouts/Layout.astro";
     }
 </style>
 <script is:inline>
-const links = document.querySelectorAll("a");
-links.forEach((link) => {
-    link.addEventListener("click", () =>
-        umami.track(`clicked ${link.textContent}`)
-    );
-});
+    const links = document.querySelectorAll("a");
+    links.forEach((link) => {
+        link.addEventListener("click", () =>
+            umami.track(`clicked ${link.textContent}`)
+        );
+    });
 </script>
