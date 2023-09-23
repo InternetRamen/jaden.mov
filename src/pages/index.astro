@@ -7,15 +7,19 @@ import Layout from "../layouts/Layout.astro";
         <div class="w-11/12 max-w-lg mx-auto">
             <h1 class="text-4xl font-bold">Jaden Hou</h1>
             <p>
-                Hi, I'm Jaden and I'm a student in the <span class="hover:text-green-500 transition-colors">Global Ecology</span> magnet
-                program @ <span class="hover:text-amber-300 transition-colors">Poolesville High School</span>.
+                Hi, I'm Jaden and I'm a student in the <span
+                    class="hover:text-green-500 transition-colors"
+                    >Global Ecology</span
+                > magnet program @ <span
+                    class="hover:text-amber-300 transition-colors"
+                    >Poolesville High School</span
+                >.
                 <br /><br />
                 You find me at
                 <br />
                 <span class="font-mono rounded-md"
-                    >jadenhou19 <span class="text-purple-500 brack">[at]</span> gmail <span
-                        class="text-purple-500 brack">[dot]</span
-                    > com</span
+                    >jadenhou19 <span class="text-purple-500 brack">[at]</span> gmail
+                    <span class="text-purple-500 brack">[dot]</span> com</span
                 >
                 <br />
                 or here:
@@ -31,13 +35,24 @@ import Layout from "../layouts/Layout.astro";
                         target="_blank"
                         class="link">Instagram</a
                     >
-                        <a
+                    <a
                         href="https://github.com/InternetRamen"
                         target="_blank"
                         class="link">GitHub</a
                     >
                 </div>
             </p>
+            <script
+                src="https://widgets.tree-nation.com/js/widgets/v1/widgets.min.js?v=1.0"
+            ></script>
+            <div id="tree-nation-offset-website"></div>
+            <script is:inline>
+                TreeNationOffsetWebsite({
+                    code: "650f6383d0173",
+                    lang: "en",
+                    theme: "light",
+                }).render("#tree-nation-offset-website");
+            </script>
         </div>
     </main>
 </Layout>
@@ -51,8 +66,6 @@ import Layout from "../layouts/Layout.astro";
 </style>
 <script is:inline>
 const links = document.querySelectorAll("a");
-
-// Add event listeners to fire confetti when a button is clicked.
 links.forEach((link) => {
     link.addEventListener("click", () =>
         umami.track(`clicked ${link.textContent}`)
