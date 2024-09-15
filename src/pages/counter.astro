@@ -24,7 +24,8 @@ import Layout from "../layouts/Layout.astro";
             <textarea
                 class="w-full h-40 p-2 mt-2 border border-white border-opacity-1 rounded-md text-[10pt] bg-white bg-opacity-10 text-white focus:outline-none"
             ></textarea>
-            <p class="text-white">
+            <p class="text-white whitespace-pre-wrap">
+            {`
                 Honors: 100 characters
                 Activites:
                  - Position/Leadership description: 50 characters
@@ -32,6 +33,7 @@ import Layout from "../layouts/Layout.astro";
                  - Description: 150 characters
                 Personal Statement: 650 words
                 Additional Information: 650 words
+            `}
             </p>
         </div>
     </main>
